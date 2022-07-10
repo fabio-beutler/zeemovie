@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
       movie: data,
       people: peopleData
     },
-    revalidate: 1000 * 60 * 60 * 24 * 2, // 2 days
+    revalidate: 60 * 60 * 24 * 2, // 2 days
     notFound: status !== 200
   }
 }

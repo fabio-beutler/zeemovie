@@ -17,6 +17,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       movies: data
     },
-    revalidate: 1000 * 60 * 60 * 24 * 2 // 2 days
+    revalidate: 60 * 60 * 24 * 2 // 2 days
   }
 }
