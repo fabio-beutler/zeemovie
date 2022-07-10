@@ -14,9 +14,9 @@ export const Home: NextPage<MoviesListWrapperProps> = props => {
       <Main>
         <Title>zee movies</Title>
         <Ul>
-          {props.data?.map(movie => (
+          {props.movies?.map(movie => (
             <Li key={movie.id}>
-              <NextLink href={movie.id}>
+              <NextLink href={movie.id} passHref>
                 <a>
                   <h2>{movie.title}</h2>
                   <span>{movie.original_title}</span>

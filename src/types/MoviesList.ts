@@ -7,5 +7,5 @@ export interface Movie {
 }
 
 export interface MoviesListWrapperProps {
-  data: Movie[]
+  movies: Movie[]
 }
