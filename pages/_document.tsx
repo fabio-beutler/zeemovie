@@ -3,7 +3,7 @@ import { getCssText } from '@/styles/stitches.config'
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang='en'>
       <Head>
         <style
           id='stitches'

@@ -1,13 +1,6 @@
 import { api } from '@/services/api'
+import { Movie } from '@/types/MoviesList'
 import { useQuery } from 'react-query'
-
-interface Movie {
-  id: string
-  title: string
-  original_title: string
-  description: string
-  director: string
-}
 
 async function getMovies() {
   const { data } = await api.get<Movie[]>(
@@ -16,6 +9,6 @@ async function getMovies() {
   return data
 }
 
-export function useMovies() {
-  return useQuery('movies', getMovies)
+export function useMovies(initialData: Movie[] = []) {
+  return useQuery('movies', getMovies, { initialData })
 }

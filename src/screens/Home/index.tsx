@@ -1,34 +1,30 @@
 import type { NextPage } from 'next'
-import NextLink from 'next/link'
 import Head from 'next/head'
-import { Li, Main, Title, Ul } from './styles'
+import { List, Main, Title } from './styles'
 import { MoviesListWrapperProps } from '@/types/MoviesList'
+import { MovieCard } from '@/components/MovieCard'
+import { useMovies } from '@/hooks/useMovies'
+import { Header } from '@/components/Header'
 
 export const Home: NextPage<MoviesListWrapperProps> = props => {
+  const { data } = useMovies(props.movies)
+
   return (
     <div>
       <Head>
         <title>Zee Movie</title>
       </Head>
 
+      <Header />
       <Main>
-        <Title>zee movies</Title>
-        <Ul>
-          {props.movies?.map(movie => (
-            <Li key={movie.id}>
-              <NextLink href={`movie/${movie.id}`} passHref>
-                <a>
-                  <h2>{movie.title}</h2>
-                  <span>{movie.original_title}</span>
-                  <p>{movie.description}</p>
-                  <span>
-                    directed by: <strong>{movie.director}</strong>
-                  </span>
-                </a>
-              </NextLink>
-            </Li>
+        <Title>all movies</Title>
+        <List>
+          {data?.map(movie => (
+            <li key={movie.id}>
+              <MovieCard movie={movie} />
+            </li>
           ))}
-        </Ul>
+        </List>
       </Main>
     </div>
   )

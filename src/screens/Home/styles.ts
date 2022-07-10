@@ -12,34 +12,10 @@ export const Title = styled('h1', {
   margin: 0
 })
 
-export const Ul = styled('ul', {
+export const List = styled('ul', {
   listStyle: 'none',
   display: 'flex',
   flexFlow: 'column nowrap',
   gap: '1rem',
   padding: '0'
-})
-
-export const Li = styled('li', {
-  padding: '1rem',
-  borderRadius: '0.5rem',
-  backgroundColor: '#f2f2f2',
-
-  a: {
-    textDecoration: 'none',
-    color: 'currentColor',
-
-    h2: {
-      display: 'inline',
-      marginRight: '1rem'
-    },
-
-    span: {
-      color: 'gray'
-    },
-
-    'span:last-child': {
-      color: 'currentColor'
-    }
-  }
 })

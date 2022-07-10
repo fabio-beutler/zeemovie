@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Flex, Li, Main, Section, Title, Ul } from './styles'
 import { MovieWrapperProps } from '@/types/MovieDetail'
+import { Header } from '@/components/Header'
 
 export const Movie: NextPage<MovieWrapperProps> = props => {
   return (
@@ -9,6 +10,8 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
       <Head>
         <title>Zee Movies | {props.movie.title}</title>
       </Head>
+
+      <Header />
 
       <Main>
         <Flex>
