@@ -10,9 +10,13 @@ const MovieWrapper: NextPage<MovieWrapperProps> = props => {
 
 export default MovieWrapper
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { data } = await api.get<{ id: string }[]>(`/films?fields=id`)
+
   return {
-    paths: [],
+    paths: data.map(movie => ({
+      params: { movieId: movie.id }
+    })),
     fallback: 'blocking'
   }
 }
