@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps = async ctx => {
       axios.get<Person>(`${person}?fields=id,name,age,gender`)
     )
   )
-  const peopleData = peopleDataResponse.map(res => res.data)
+  const peopleData = peopleDataResponse.map(res => res.data).flat()
 
   return {
     props: {

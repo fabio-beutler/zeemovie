@@ -32,17 +32,20 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
             <span>Rotten Tomatoes: {props.movie.rt_score}</span>
           </Section>
         </Flex>
-
-        <h2>People</h2>
-        <Ul>
-          {props.people.map(person => (
-            <Li key={person.id}>
-              <h3>{person.name}</h3>
-              <span>{person.gender}</span>
-              <span>{person.age}</span>
-            </Li>
-          ))}
-        </Ul>
+        {props.people.length > 0 && (
+          <>
+            <h2>People</h2>
+            <Ul>
+              {props.people.map(person => (
+                <Li key={person.id}>
+                  <h3>{person.name}</h3>
+                  <span>{person.gender}</span>
+                  <span>{person.age}</span>
+                </Li>
+              ))}
+            </Ul>
+          </>
+        )}
       </Main>
     </div>
   )
