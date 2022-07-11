@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux'
 import { handleFavorite } from '@/store/favoriteSlice'
-import { FavoriteButtonContainer } from './styles'
 import { Heart } from 'phosphor-react'
 
 interface FavoriteButtonProps {
@@ -13,8 +12,9 @@ export const FavoriteButton = (props: FavoriteButtonProps) => {
   const favorites = useAppSelector<string[]>(state => state.favorite)
 
   const isFavorite = favorites.includes(props.movieId)
+
   return (
-    <FavoriteButtonContainer
+    <button
       type='button'
       onClick={() => dispatch(handleFavorite(props.movieId))}
     >
@@ -23,6 +23,6 @@ export const FavoriteButton = (props: FavoriteButtonProps) => {
         color={isFavorite ? '#c71111' : '#1f1e1e'}
         weight={isFavorite ? 'fill' : 'regular'}
       />
-    </FavoriteButtonContainer>
+    </button>
   )
 }

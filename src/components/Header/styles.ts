@@ -2,11 +2,13 @@ import { styled } from '@/styles/stitches.config'
 
 export const HeaderContainer = styled('header', {
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '0.5rem 1rem',
-  backgroundColor: '#fff',
-  borderBottom: '1px solid #ccc'
+  backgroundColor: '#ffffff',
+  borderBottom: '1px solid #cccccc',
+
+  '@md': {
+    padding: '0 3rem'
+  }
 })
 
 export const HeaderNav = styled('nav', {
@@ -14,9 +16,30 @@ export const HeaderNav = styled('nav', {
   gap: '1rem'
 })
 
-export const Logo = styled('h1', {})
+export const Logo = styled('a', {
+  fontSize: '1.5rem',
+  fontWeight: 'bold',
+  padding: '1rem 0'
+})
 
 export const HeaderNavLink = styled('a', {
-  textDecoration: 'none',
-  color: 'currentColor'
+  display: 'flex',
+  alignItems: 'center',
+  transition: 'all 0.15s ease',
+  height: '100%',
+
+  '&:hover': {
+    borderBottom: '3px solid currentColor'
+  },
+
+  variants: {
+    state: {
+      active: {
+        borderBottom: '3px solid currentColor'
+      },
+      inactive: {
+        borderBottom: 'none'
+      }
+    }
+  }
 })

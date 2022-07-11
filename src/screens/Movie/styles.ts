@@ -28,11 +28,9 @@ export const Title = styled('h1', {
 })
 
 export const Ul = styled('ul', {
-  listStyle: 'none',
   display: 'flex',
   flexFlow: 'column wrap',
-  gap: '1rem',
-  padding: '0'
+  gap: '1rem'
 })
 
 export const Li = styled('li', {

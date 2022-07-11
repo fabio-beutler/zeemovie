@@ -13,9 +13,7 @@ export const Title = styled('h1', {
 })
 
 export const List = styled('ul', {
-  listStyle: 'none',
   display: 'flex',
   flexFlow: 'column nowrap',
-  gap: '1rem',
-  padding: '0'
+  gap: '1rem'
 })

@@ -6,5 +6,21 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
     fontFamily: 'Roboto, sans-serif'
+  },
+
+  a: {
+    textDecoration: 'none',
+    color: 'currentColor'
+  },
+
+  button: {
+    border: 'none',
+    background: 'inherit',
+    cursor: 'pointer'
+  },
+
+  ul: {
+    listStyle: 'none',
+    padding: 0
   }
 })
