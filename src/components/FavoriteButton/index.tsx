@@ -24,20 +24,15 @@ export const FavoriteButton = (props: FavoriteButtonProps) => {
   return (
     <TooltipProvider delayDuration={200}>
       <Tooltip>
-        <TooltipTrigger>
-          <button
-            type='button'
-            onClick={() => dispatch(handleFavorite(props.movieId))}
-            aria-label={
-              isFavorite ? 'Remove from favorites' : 'Add to favorites'
-            }
-          >
-            <Heart
-              color='#1f1f1f'
-              weight={isFavorite ? 'fill' : 'regular'}
-              size={32}
-            />
-          </button>
+        <TooltipTrigger
+          onClick={() => dispatch(handleFavorite(props.movieId))}
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          <Heart
+            color='#1f1f1f'
+            weight={isFavorite ? 'fill' : 'regular'}
+            size={32}
+          />
         </TooltipTrigger>
         <TooltipContent side='left'>
           {isFavorite ? 'remove from favorites' : 'add to favorites'}
