@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Zee Movie
+
+This application list all films from [Studio Ghibli API](https://ghibliapi.herokuapp.com/#), show details from each title, and make possible to favorite some films.
+
+You can checkout the demo page at [here](https://zeemovie.vercel.app).
 
 ## Getting Started
 
 First, run the development server:
 
 ```bash
-npm run dev
-# or
+yarn install
+# and
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Technologies used in this project:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Static Props with ISR (Incremental Static Regeneration)
 
-## Learn More
+Used to fetch all data required from the API and build all pages with static content, **isr** will revalidate this builded cache each two days.
 
-To learn more about Next.js, take a look at the following resources:
+### React Query
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+In order to increase a little bit of performance, react-query was used to store initial data and share with _favorites_ page that should be only client side.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Stitches
 
-## Deploy on Vercel
+Used to construct all responsive styles, with near-zero runtime.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Radix-UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+From the same people that created Stitches, Radix provide accessible components, in this project was used the _tooltip_ for favorite button.
+
+### Redux Toolkit
+
+A way easier than traditional Redux, Redux Toolkit was used to manage and store locally information about favorite films.
