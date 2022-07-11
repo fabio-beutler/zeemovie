@@ -4,7 +4,6 @@ import { List, Main, Title } from './styles'
 import { MovieCard } from '@/components/MovieCard'
 import { useMovies } from '@/hooks/useMovies'
 import { useAppSelector } from '@/hooks/useRedux'
-import { Header } from '@/components/Header'
 
 export const Favorites: NextPage = () => {
   const { data } = useMovies()
@@ -16,8 +15,6 @@ export const Favorites: NextPage = () => {
       <Head>
         <title>Zee Movie | My Favorites</title>
       </Head>
-
-      <Header />
 
       <Main>
         <Title>my favorites</Title>

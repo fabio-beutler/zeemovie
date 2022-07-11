@@ -13,7 +13,6 @@ import {
   Ul
 } from './styles'
 import { MovieWrapperProps } from '@/types/MovieDetail'
-import { Header } from '@/components/Header'
 import { FavoriteButton } from '@/components/FavoriteButton'
 import { useRouter } from 'next/router'
 
@@ -24,8 +23,6 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
       <Head>
         <title>Zee Movies | {props.movie.title}</title>
       </Head>
-
-      <Header />
 
       <Main>
         <BackButton

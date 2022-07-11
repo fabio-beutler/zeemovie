@@ -6,6 +6,7 @@ export const HeaderContainer = styled('header', {
   backgroundColor: '#ffffff',
   borderBottom: '1px solid #cccccc',
   padding: '0 1rem',
+  zIndex: '10',
 
   '@md': {
     padding: '0 3rem'

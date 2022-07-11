@@ -4,7 +4,6 @@ import { List, Main, Title } from './styles'
 import { MoviesListWrapperProps } from '@/types/MoviesList'
 import { MovieCard } from '@/components/MovieCard'
 import { useMovies } from '@/hooks/useMovies'
-import { Header } from '@/components/Header'
 
 export const Home: NextPage<MoviesListWrapperProps> = props => {
   const { data } = useMovies(props.movies)
@@ -15,7 +14,6 @@ export const Home: NextPage<MoviesListWrapperProps> = props => {
         <title>Zee Movie</title>
       </Head>
 
-      <Header />
       <Main>
         <Title>all movies</Title>
         <List>
