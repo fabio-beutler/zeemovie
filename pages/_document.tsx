@@ -5,6 +5,10 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
+        <meta
+          name='description'
+          content='Zee Movie, a webpage to index all movies from Studio Ghibli'
+        />
         <style
           id='stitches'
           dangerouslySetInnerHTML={{ __html: getCssText() }}
