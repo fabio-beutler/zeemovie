@@ -1,9 +1,10 @@
-import { Card, Info, Title, Link, FavoriteButton } from './styles'
+import { Card, Info, Title, Link, FavoriteButtonPlace } from './styles'
 import NextLink from 'next/link'
 import { Heart } from 'phosphor-react'
 import { Movie } from '@/types/MoviesList'
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux'
 import { handleFavorite } from '@/store/favoriteSlice'
+import { FavoriteButton } from '../FavoriteButton'
 
 interface MovieCardProps {
   movie: Movie
@@ -33,16 +34,9 @@ export const MovieCard = (props: MovieCardProps) => {
         </Link>
       </NextLink>
 
-      <FavoriteButton
-        type='button'
-        onClick={() => dispatch(handleFavorite(props.movie.id))}
-      >
-        <Heart
-          size={32}
-          color={isFavorite ? '#c71111' : '#1f1e1e'}
-          weight={isFavorite ? 'fill' : 'regular'}
-        />
-      </FavoriteButton>
+      <FavoriteButtonPlace>
+        <FavoriteButton movieId={props.movie.id} />
+      </FavoriteButtonPlace>
     </Card>
   )
 }

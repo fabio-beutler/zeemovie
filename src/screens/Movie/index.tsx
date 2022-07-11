@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Flex, Li, Main, Section, Title, Ul } from './styles'
 import { MovieWrapperProps } from '@/types/MovieDetail'
 import { Header } from '@/components/Header'
+import { FavoriteButton } from '@/components/FavoriteButton'
 
 export const Movie: NextPage<MovieWrapperProps> = props => {
   return (
@@ -31,6 +32,7 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
             <span>Release: {props.movie.release_date}</span>
             <span>Rotten Tomatoes: {props.movie.rt_score}</span>
           </Section>
+          <FavoriteButton movieId={props.movie.id} />
         </Flex>
         {props.people.length > 0 && (
           <>
