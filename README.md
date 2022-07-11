@@ -39,3 +39,7 @@ From the same people that created Stitches, Radix provide accessible components,
 ### Redux Toolkit
 
 A way easier than traditional Redux, Redux Toolkit was used to manage and store locally information about favorite films.
+
+### Framer Motion
+
+Add a few transitions between pages and showing component
