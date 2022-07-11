@@ -5,6 +5,7 @@ export const HeaderContainer = styled('header', {
   justifyContent: 'space-between',
   backgroundColor: '#ffffff',
   borderBottom: '1px solid #cccccc',
+  padding: '0 1rem',
 
   '@md': {
     padding: '0 3rem'
