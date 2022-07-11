@@ -1,16 +1,26 @@
 import { HeaderContainer, HeaderNav, HeaderNavLink, Logo } from './styles'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 
 export const Header = () => {
+  const { pathname } = useRouter()
   return (
     <HeaderContainer>
-      <Logo>zee movie</Logo>
+      <NextLink href='/' passHref>
+        <Logo>zee movie</Logo>
+      </NextLink>
       <HeaderNav>
         <NextLink href='/' passHref>
-          <HeaderNavLink>Movies</HeaderNavLink>
+          <HeaderNavLink state={pathname === '/' ? 'active' : 'inactive'}>
+            movies
+          </HeaderNavLink>
         </NextLink>
         <NextLink href='/favorites' passHref>
-          <HeaderNavLink>My favorites</HeaderNavLink>
+          <HeaderNavLink
+            state={pathname === '/favorites' ? 'active' : 'inactive'}
+          >
+            favorites
+          </HeaderNavLink>
         </NextLink>
       </HeaderNav>
     </HeaderContainer>
