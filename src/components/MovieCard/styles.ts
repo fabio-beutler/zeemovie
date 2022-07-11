@@ -24,11 +24,8 @@ export const Title = styled('div', {
 
 export const Info = styled('div', {})
 
-export const FavoriteButton = styled('button', {
+export const FavoriteButtonPlace = styled('div', {
   position: 'absolute',
   top: '10px',
-  right: '10px',
-  border: 'none',
-  background: 'inherit',
-  cursor: 'pointer'
+  right: '10px'
 })

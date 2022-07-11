@@ -6,6 +6,7 @@ export interface Person {
 }
 
 export interface MovieDetailed {
+  id: string
   title: string
   original_title: string
   description: string
