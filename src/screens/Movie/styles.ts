@@ -7,6 +7,13 @@ export const Main = styled('main', {
   margin: '0 auto'
 })
 
+export const BackButton = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  fontSize: '1.2rem',
+  padding: 0,
+  marginBottom: '1rem'
+})
 export const Flex = styled('div', {
   display: 'flex',
   alignItems: 'center',

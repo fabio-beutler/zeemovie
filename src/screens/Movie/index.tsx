@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { CaretLeft } from 'phosphor-react'
 import {
+  BackButton,
   Description,
   FavoritePlace,
   Flex,
@@ -13,8 +15,10 @@ import {
 import { MovieWrapperProps } from '@/types/MovieDetail'
 import { Header } from '@/components/Header'
 import { FavoriteButton } from '@/components/FavoriteButton'
+import { useRouter } from 'next/router'
 
 export const Movie: NextPage<MovieWrapperProps> = props => {
+  const router = useRouter()
   return (
     <div>
       <Head>
@@ -24,6 +28,13 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
       <Header />
 
       <Main>
+        <BackButton
+          type='button'
+          aria-label='go back'
+          onClick={() => router.back()}
+        >
+          <CaretLeft size={26} /> back
+        </BackButton>
         <Section>
           <Flex direction={{ '@initial': 'column', '@sm': 'row' }}>
             <Title>{props.movie.title}</Title>
