@@ -15,6 +15,7 @@ import {
 import { MovieWrapperProps } from '@/types/MovieDetail'
 import { FavoriteButton } from '@/components/FavoriteButton'
 import { useRouter } from 'next/router'
+import ScrollToTopButton from '@/components/ScrollToTop'
 
 export const Movie: NextPage<MovieWrapperProps> = props => {
   const router = useRouter()
@@ -88,6 +89,7 @@ export const Movie: NextPage<MovieWrapperProps> = props => {
             </Ul>
           </>
         )}
+        <ScrollToTopButton />
       </Main>
     </div>
   )

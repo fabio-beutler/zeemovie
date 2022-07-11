@@ -4,6 +4,7 @@ import { List, Main, Title } from './styles'
 import { MovieCard } from '@/components/MovieCard'
 import { useMovies } from '@/hooks/useMovies'
 import { useAppSelector } from '@/hooks/useRedux'
+import ScrollToTopButton from '@/components/ScrollToTop'
 
 export const Favorites: NextPage = () => {
   const { data } = useMovies()
@@ -27,6 +28,7 @@ export const Favorites: NextPage = () => {
               </li>
             ))}
         </List>
+        <ScrollToTopButton />
       </Main>
     </div>
   )

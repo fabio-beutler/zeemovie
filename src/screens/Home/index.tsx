@@ -4,6 +4,7 @@ import { List, Main, Title } from './styles'
 import { MoviesListWrapperProps } from '@/types/MoviesList'
 import { MovieCard } from '@/components/MovieCard'
 import { useMovies } from '@/hooks/useMovies'
+import ScrollToTopButton from '@/components/ScrollToTop'
 
 export const Home: NextPage<MoviesListWrapperProps> = props => {
   const { data } = useMovies(props.movies)
@@ -23,6 +24,7 @@ export const Home: NextPage<MoviesListWrapperProps> = props => {
             </li>
           ))}
         </List>
+        <ScrollToTopButton />
       </Main>
     </div>
   )
