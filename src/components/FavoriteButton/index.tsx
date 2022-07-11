@@ -40,7 +40,7 @@ export const FavoriteButton = (props: FavoriteButtonProps) => {
           </button>
         </TooltipTrigger>
         <TooltipContent side='left'>
-          add to favorites
+          {isFavorite ? 'remove from favorites' : 'add to favorites'}
           <TooltipArrow />
         </TooltipContent>
       </Tooltip>
